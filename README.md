@@ -2,6 +2,8 @@
 
 This is a generator for plis that helps you create your own generators.
 
+> This generator is still under development.
+
 Plis-New has a set of useful build in commands :
 - Generator - `plis new generator MY-GENERATOR` creates a new generator with the needed folder structure and files. 
 - Module - `plis new module MY-MODULR` creates a new module to be used as a library in your generators. 
@@ -17,5 +19,3 @@ Clone repository
 git clone https://github.com/PlisSolutions/plis-new.git new
 ```
 Don't forget to specify the folder of cloning it must match the generator config name `new.json`
-
-> This generator is still under development.
