@@ -1,0 +1,37 @@
+plis,gen,fmt = import("plis"),import("generator"),import("fmt")
+data = gen.extractData(plis)
+err = plis.MkdirAll(plis.Helpers.RootGeneratorPath(data.name))
+if err != nil {
+    fmt.Println(err)
+    return
+}
+err = plis.MkdirAll(plis.Helpers.ChildGeneratorConfigPath(data.name))
+if err != nil {
+    fmt.Println(err)
+    return
+}
+err = plis.MkdirAll(plis.Helpers.GeneratorScriptsPath(data.name))
+if err != nil {
+    fmt.Println(err)
+    return
+}
+err = plis.MkdirAll(plis.Helpers.GeneratorTemplatesPath(data.name))
+if err != nil {
+    fmt.Println(err)
+    return
+}
+err = plis.MkdirAll(plis.Helpers.GeneratorModulesPath(data.name))
+if err != nil {
+    fmt.Println(err)
+    return
+}
+err = plis.CopyTpl("generator.json.tpl",plis.Helpers.RootGeneratorPath(data.name)+ data.name+".json",{"name":data.name,"flags":data.flags,"args":data.args})
+if err != nil {
+    fmt.Println(err)
+    return
+}
+err = plis.CopyTpl("generator.plis.tpl",plis.Helpers.RootGeneratorPath(data.name)+ data.name+".plis",{"name":data.name,"flags":data.flags,"args":data.args})
+if err != nil {
+    fmt.Println(err)
+    return
+}

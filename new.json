@@ -1,0 +1,7 @@
+{
+  "name":"new",
+  "aliases":["n"],
+  "description":"A set of useful generators to help you create your own generators",
+  "sub_commands":["generator","module","child-gen"],
+  "modules":["generator"]
+}

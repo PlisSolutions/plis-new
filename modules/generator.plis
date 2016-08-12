@@ -1,0 +1,12 @@
+module Generator {
+    func extractData (plis){
+        name = plis.Args.name
+        flags = plis.Flags.flags
+        arguments = plis.Flags.args
+        flags = plis.Strings.ToStringArray(flags,",")
+        arguments = plis.Strings.ToStringArray(arguments,",")
+        generatorName = plis.Strings.ToKebabCase(name)
+        return {"name":generatorName,"flags":flags,"args":arguments}
+    }
+}
+register("generator",Generator)

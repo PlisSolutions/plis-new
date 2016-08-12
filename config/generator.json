@@ -1,0 +1,24 @@
+{
+  "name":"generator",
+  "aliases":["gen","g"],
+  "description":"Generate a new generator",
+  "args":[
+    {
+      "name":"name",
+      "type":"string",
+      "required":true
+    }
+  ],
+  "flags":[
+    {
+      "long":"flags",
+      "short":"f",
+      "type":"string"
+    },
+    {
+      "long":"args",
+      "short":"a",
+      "type":"string"
+    }
+  ]
+}
